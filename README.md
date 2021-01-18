@@ -36,6 +36,7 @@ methods: {
 ```
 
 具体参考 /src/view/index.vue
+校验地址 http://81.70.13.2:10082/doc.html
 
 ## Build Setup
 
