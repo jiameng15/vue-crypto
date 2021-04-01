@@ -20,8 +20,16 @@ function Encrypt(word) {
   });
   return encrypted.toString();
 }
+function MD5(word) {
+  return CryptoJS.MD5(word).toString()
+}
 
+function MD5Capital(word) {
+  return CryptoJS.MD5(word).toString().toUpperCase()
+}
 export default {
   Decrypt,
   Encrypt,
+  MD5,
+  MD5Capital
 };

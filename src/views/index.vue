@@ -18,12 +18,15 @@
       <p class="msg">密文： <input type="text" v-model="userInfo" /></p>
       <button class="encrypt-btn" @click="decrypt">解密</button>
       <p class="msg">明文： {{ decryptMsg }}</p>
+      <button class="encrypt-btn" @click="md5">MD5加密</button>
+      <p class="msg">MD5： {{ md5Msg }}</p>
     </div>
   </div>
 </template>
 
 <script>
 import secret from "../utils/secret";
+// import secret from "yunmeng-crypto";
 // import userInfo from "../utils/mock";
 export default {
   data() {
@@ -32,11 +35,16 @@ export default {
       encryptMsg: "",
       userInfo: "",
       decryptMsg: "",
+      md5Msg:""
     };
   },
   methods: {
+    md5(){
+      this.md5Msg = secret.MD5(this.msg)
+    },
     encrypt() {
-      this.userInfo = this.encryptMsg = secret.Encrypt(this.msg);
+      // this.userInfo = this.encryptMsg = secret.Encrypt(this.msg);
+      this.userInfo = this.encryptMsg = secret.MD5(this.msg)
     },
     decrypt() {
       this.decryptMsg = secret.Decrypt(this.userInfo);

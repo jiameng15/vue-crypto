@@ -32,6 +32,9 @@ methods: {
   decrypt() {
     this.decryptMsg = secret.Decrypt('需要解密的内容');
   },
+  md5(){
+    this.md5Msg = secret.MD5('MD5加密的内容')
+  }
 }
 ```
 
